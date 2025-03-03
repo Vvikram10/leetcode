@@ -1,0 +1,18 @@
+class Solution:
+    def pivotArray(self, nums: List[int], pivot: int) -> List[int]:
+        # Lists to store elements less than, equal to, and greater than the pivot
+        less = []
+        equal = []
+        greater = []
+        
+        # Iterate through the nums list and categorize the elements
+        for num in nums:
+            if num < pivot:
+                less.append(num)
+            elif num == pivot:
+                equal.append(num)
+            else:
+                greater.append(num)
+        
+        # Concatenate all the lists and return the result
+        return less + equal + greater
